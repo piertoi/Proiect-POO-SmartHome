@@ -1,0 +1,8 @@
+[
+    {
+        "Nume": "ter",
+        "Stare": "Oprit",
+        "Temperatura": 20,
+        "Tip": "SmartThermostat"
+    }
+]
