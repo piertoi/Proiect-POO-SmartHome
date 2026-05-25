@@ -1,6 +1,5 @@
 #include "ConcreteDevices.h"
 
-// --- SmartLight ---
 SmartLight::SmartLight(const std::string& name) : SmartDevice(name) {}
 
 void SmartLight::performAction() {
@@ -11,7 +10,6 @@ void SmartLight::update(const std::string& event) {
     if (event == "MotionDetected") turnOn();
 }
 
-// Transformare in JSON
 json SmartLight::toJson() const {
     return json{
         {"Tip", "SmartLight"},
@@ -20,7 +18,6 @@ json SmartLight::toJson() const {
     };
 }
 
-// --- SmartThermostat ---
 SmartThermostat::SmartThermostat(const std::string& name, int temp) : SmartDevice(name), temperature(temp) {}
 
 void SmartThermostat::performAction() {
@@ -31,7 +28,6 @@ void SmartThermostat::update(const std::string& event) {
     if (event == "NightMode") temperature = 20;
 }
 
-// Transformare in JSON
 json SmartThermostat::toJson() const {
     return json{
         {"Tip", "SmartThermostat"},

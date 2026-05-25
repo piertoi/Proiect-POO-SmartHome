@@ -23,10 +23,8 @@ public:
             std::cout << "2. Adauga Termostat\n";
             std::cout << "3. Declanseaza Senzorul de Miscare (Test Observer)\n";
             std::cout << "4. Afiseaza Status Dispozitive\n";
-            std::cout << "5. Salveaza Configurația in JSON si Iesi\n";
+            std::cout << "5. Salveaza Configurat1ia in JSON si Iesi\n";
             std::cout << "Alege o optiune (1-5): ";
-            
-            // Validare input pentru a preveni crash-urile daca utilizatorul introduce litere
             if (!(std::cin >> choice)) {
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -37,12 +35,12 @@ public:
             if (choice == 1) {
                 std::string name;
                 std::cout << "Introdu numele becului (ex: Lumina Bucatarie): ";
-                std::cin >> std::ws; // Curata buffer-ul
+                std::cin >> std::ws;
                 std::getline(std::cin, name);
                 
                 SmartLight* light = new SmartLight(name);
                 houseRegistry.add(light);
-                sensor.addObserver(light); // Il legam si la senzor
+                sensor.addObserver(light);
                 std::cout << "[Succes] Becul '" << name << "' a fost adaugat.\n";
             } 
             else if (choice == 2) {
@@ -60,7 +58,6 @@ public:
                 std::cout << "[Succes] Termostatul '" << name << "' a fost adaugat.\n";
             }
             else if (choice == 3) {
-                // Aici demonstrezi Observer Pattern-ul cerut
                 sensor.detectMotion();
             }
             else if (choice == 4) {
@@ -68,7 +65,6 @@ public:
                 houseRegistry.executeAllActions();
             }
             else if (choice == 5) {
-                // Aici demonstrezi Varianta 1 (integrarea JSON)
                 houseRegistry.saveSystemConfig("stare_casa.json");
                 std::cout << "Se inchide sistemul...\n";
             } 

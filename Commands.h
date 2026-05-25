@@ -1,14 +1,12 @@
 #pragma once
 #include "SmartDevice.h"
 
-// Interfața Command
 class Command {
 public:
     virtual void execute() = 0;
     virtual ~Command() = default;
 };
 
-// Comenzi concrete
 class TurnOnCommand : public Command {
 private:
     SmartDevice* device;

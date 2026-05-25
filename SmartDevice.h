@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "json.hpp" // Libraria externa!
+#include "json.hpp"
 
 using json = nlohmann::json;
 
@@ -22,7 +22,7 @@ public:
     virtual ~SmartDevice();
 
     virtual void performAction() = 0; 
-    virtual json toJson() const = 0; // METODĂ NOUĂ: obligă derivatele să se exporte în JSON
+    virtual json toJson() const = 0; 
     
     void turnOn();
     void turnOff();

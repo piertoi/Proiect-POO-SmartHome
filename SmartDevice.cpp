@@ -1,6 +1,6 @@
 #include "SmartDevice.h"
 
-int SmartDevice::totalDevices = 0; // Inițializarea membrului static
+int SmartDevice::totalDevices = 0;
 
 SmartDevice::SmartDevice(const std::string& name) : name(name), isOn(false) {
     totalDevices++;
